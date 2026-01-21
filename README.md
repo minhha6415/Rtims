@@ -3,7 +3,6 @@
 
 **Quản lý kho hàng thời gian thực** – Dự án thực tế áp dụng Java Spring Boot để xây dựng hệ thống quản lý sản phẩm trong kho (CRUD, tìm kiếm, validation, giao diện web).
 
-Dự án này được thiết kế để **giúp người học hiểu cách áp dụng Java trong thực tế**: từ setup môi trường, kết nối database thật, xây dựng REST API, validation dữ liệu, đến giao diện web đơn giản bằng Thymeleaf – tất cả đều là kỹ năng thường gặp trong các dự án backend tại công ty phần mềm Việt Nam (FPT, VNG, Tiki, Shopee…).
 
 ## Công nghệ sử dụng (Tech Stack)
 
