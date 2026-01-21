@@ -53,30 +53,12 @@ spring.datasource.password=[mật-khẩu-của-bạn]
  ```
 
  3. **Chạy ứng dụng**
-# Cách 1: Dùng IntelliJ → Run RtimsApplication.java
-# Cách 2: Dùng terminal
+Cách 1: Dùng IntelliJ → Run RtimsApplication.java
+Cách 2: Dùng terminal
 mvn spring-boot:run
 
 4. **Truy cập**
 Trang web quản lý kho: http://localhost:8080/items
 REST API ví dụ: http://localhost:8080/api/items
 
-### Cấu trúc thư mục chính
-RTIMS/
-├── src/
-│   ├── main/
-│   │   ├── java/org/example/
-│   │   │   ├── RtimsApplication.java          # Entry point
-│   │   │   ├── Item.java                      # Entity
-│   │   │   ├── ItemRepository.java            # JPA Repository
-│   │   │   ├── ItemService.java               # Business logic
-│   │   │   ├── ItemRestController.java        # REST API
-│   │   │   ├── ItemWebController.java         # Web MVC (Thymeleaf)
-│   │   │   └── SecurityConfig.java            # Cấu hình bảo mật
-│   │   └── resources/
-│   │       ├── templates/items/               # Thymeleaf templates
-│   │       │   ├── list.html
-│   │       │   └── form.html
-│   │       └── application.properties         # Cấu hình
-├── pom.xml                                    # Maven dependencies
-└── README.md
+
