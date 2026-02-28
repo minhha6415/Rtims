@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý kho hàng - RTIMS</title>
+    <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+
+<h1 class="mb-4">Danh sách sản phẩm trong kho</h1>
+
+<!-- Nút thêm mới -->
+<a th:href="@{/items/new}" class="btn btn-primary mb-3">+ Thêm sản phẩm mới</a>
+
+<!-- Bảng danh sách -->
+<table class="table table-striped table-hover">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Tên sản phẩm</th>
+        <th>Mô tả</th>
+        <th>Số lượng</th>
+        <th>Giá (VNĐ)</th>
+        <th>Danh mục</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${items}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.description}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td th:text="${#numbers.formatDecimal(item.price, 0, 0, 'COMMA')}"></td>
+        <td th:text="${item.category}"></td>
+        <td>
+            <a th:href="@{/items/edit/{id}(id=${item.id})}" class="btn btn-sm btn-warning">Sửa</a>
+            <form th:action="@{/items/delete/{id}(id=${item.id})}" method="post" style="display:inline;"
+                  onclick="return confirm('Bạn chắc chắn muốn xóa sản phẩm này?')">
+                <button type="submit" class="btn btn-sm btn-danger">Xóa</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- Nếu không có sản phẩm -->
+<div th:if="${#lists.isEmpty(items)}" class="alert alert-info">
+    Hiện chưa có sản phẩm nào trong kho.
+</div>
+
+<script src="/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
